@@ -1,11 +1,15 @@
 import { StyleSheet, Image, Text, View, ScrollView } from "react-native";
+import Contador from "./Contador";
 
 function Card(props) {
   return (
     <View style={styles.card}>
       <Image style={styles.imagem} source={{ uri: props.livro.capa }} />
       <Text style={styles.texto}> {props.livro.titulo} </Text>
-      <Text style={styles.preco}> {props.livro.preco} </Text>
+      <View style={styles.lados}>
+        <Text style={styles.preco}> {props.livro.preco} </Text>
+        <Contador />
+      </View>
     </View>
   );
 }
@@ -58,6 +62,9 @@ export default function Biblioteca() {
 }
 
 const styles = StyleSheet.create({
+  lados: {
+    flexDirection: "row",
+  },
   imagem: {
     width: "100%",
     height: "70%",

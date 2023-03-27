@@ -10,7 +10,7 @@ export default function Header() {
 const styles = StyleSheet.create({
   titulo: {
     fontSize: 30,
-    marginTop: "5%",
+    marginTop: "8%",
     marginBottom: 10,
     alignSelf: "center",
   },
