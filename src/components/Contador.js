@@ -15,7 +15,7 @@ export default class Contador extends Component {
   }
   render() {
     return (
-      <View>
+      <View style={{ flexDirection: "row",}}>
         <Text>{this.state.contador}</Text>
         <Button title="+" onPress={() => this.incrementar()} />
         <Button title="-" onPress={() => this.decrementar()} />
