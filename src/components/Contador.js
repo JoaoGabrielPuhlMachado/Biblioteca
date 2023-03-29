@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, Button} from "react-native";
+import { View, Text, Button, StyleSheet } from "react-native";
 
 export default class Contador extends Component {
   state = {
@@ -15,11 +15,33 @@ export default class Contador extends Component {
   }
   render() {
     return (
-      <View style={{ flexDirection: "row",}}>
-        <Text>{this.state.contador}</Text>
-        <Button title="+" onPress={() => this.incrementar()} />
-        <Button title="-" onPress={() => this.decrementar()} />
+      <View
+        style={{
+          flexDirection: "row",
+          alignItems: "center",
+          flex: 1,
+          justifyContent: "space-between",
+          margin: 0,
+          width: "100%",
+          height: 20,
+        }}
+      >
+        <Text style={styles.contador}>{this.state.contador}</Text>
+        <View style={{ flexDirection: "row", marginRight: 10, }}>
+          <Button title="+" onPress={() => this.incrementar()} />
+          <Button title="-" onPress={() => this.decrementar()} />
+        </View>
       </View>
     );
   }
 }
+const styles = StyleSheet.create({
+  contador: {
+    paddingLeft: 14,
+    paddingRight: 14,
+    paddingBottom: 6,
+    paddingTop: 6,
+    backgroundColor: "#eee",
+    marginLeft: 10,
+  },
+});

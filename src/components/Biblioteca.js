@@ -1,15 +1,12 @@
-import { StyleSheet, Image, Text, View, ScrollView } from "react-native";
+import { StyleSheet, Image, Text, View } from "react-native";
 import Contador from "./Contador";
-
 function Card(props) {
   return (
     <View style={styles.card}>
       <Image style={styles.imagem} source={{ uri: props.livro.capa }} />
       <Text style={styles.texto}> {props.livro.titulo} </Text>
-      <View style={styles.lados}>
-        <Text style={styles.preco}> {props.livro.preco} </Text>
-        <Contador />
-      </View>
+      <Text style={styles.preco}> {props.livro.preco} </Text>
+      <Contador />
     </View>
   );
 }
@@ -49,22 +46,17 @@ export default function Biblioteca() {
   ];
 
   return (
-    <ScrollView>
-      <View>
-        <View style={styles.content}>
-          {biblioteca.map((livro) => (
-            <Card livro={livro} />
-          ))}
-        </View>
+    <View>
+      <View style={styles.content}>
+        {biblioteca.map((livro) => (
+          <Card livro={livro} />
+        ))}
       </View>
-    </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  lados: {
-    flexDirection: "row",
-  },
   imagem: {
     width: "100%",
     height: "70%",
@@ -80,19 +72,19 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   texto: {
-    fontSize: 17,
+    fontSize: 13,
     color: "#000",
-    marginLeft: 5,
-    marginRight: 5,
-    marginTop: 5,
+    marginLeft: 3,
+    marginRight: 3,
+    marginTop: 3,
   },
   preco: {
     fontWeight: "bold",
-    fontSize: 17,
+    fontSize: 13,
     color: "#000",
-    marginLeft: 5,
-    marginRight: 5,
-    marginTop: 5,
+    marginLeft: 3,
+    marginRight: 3,
+    marginTop: 3,
   },
   content: {
     flex: 1,
