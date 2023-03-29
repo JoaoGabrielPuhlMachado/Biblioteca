@@ -1,5 +1,6 @@
-import { StyleSheet, Image, Text, View } from "react-native";
+import { StyleSheet, Image, Text, View, ScrollView } from "react-native";
 import Contador from "./Contador";
+
 function Card(props) {
   return (
     <View style={styles.card}>
@@ -46,13 +47,15 @@ export default function Biblioteca() {
   ];
 
   return (
-    <View>
-      <View style={styles.content}>
-        {biblioteca.map((livro) => (
-          <Card livro={livro} />
-        ))}
+    <ScrollView>
+      <View>
+        <View style={styles.content}>
+          {biblioteca.map((livro) => (
+            <Card livro={livro} />
+          ))}
+        </View>
       </View>
-    </View>
+    </ScrollView>
   );
 }
 
